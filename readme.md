@@ -36,4 +36,52 @@ part 1 - 게임 오브젝트
 part 2 - 트랜스폼
 ----------------
 
+1. Transform 
 
+    *Position : 위치
+
+    *Rotations : 회전
+
+    *Scale : 크기
+
+2. Unity 좌표계
+
+    *x축 : 좌우
+
+    *y축 : 상하
+
+    *z축 : 정면
+
+3. Script 이용하여 transform 수정하기
+
+    1. Project - Assets 아래에 c#스크립트를 생성하면, 그것을 object에 적용 가능.
+
+    2. Position 수정
+
+        1. position 이용하여 Position 값 가져올 수 있음.
+        
+        2. Translate(vector) 메소드 이용하여 옮길 수 있음. 
+    3. Rotations 수정
+        
+        1. eulerAngles 이용하여 Rotation의 값 불러올 수 있음. 
+
+        2. 직접 Rotation값 처리하면 위험하므로 다른 벡터에 저장해놓고 처리하기
+
+        3. Rotate 메소드 이용해서 처리
+
+        4. Rotation Quaternion 사용하기. 
+
+            - Quaternion의 값을 직접 계산하여 처리하기는 힘드므로 Euler 메소드 이용하여 처리. 2.와 같은 방법으로 처리
+
+            - 직관적인 euler를 이용하지 않는 이유: euler값으로 처리할 경우 한축이 90이 될때 문제가 생김. 
+    4. Scale 수정
+
+        1. localScale 로 scale불러와서 처리
+
+4. 여러가지 편리한 기능
+
+    1. 정규화 벡터 : forward, up, right
+
+    2. lookAt(target) : target을 보게 만듦
+
+    3. RotateAround(target, vector, angle) : target을 vector축 기준으로 angle만큼 회전하게 만듦.
