@@ -85,3 +85,33 @@ part 2 - 트랜스폼
     2. lookAt(target) : target을 보게 만듦
 
     3. RotateAround(target, vector, angle) : target을 vector축 기준으로 angle만큼 회전하게 만듦.
+
+part 3 - 리지드 바디(Rigidbody)
+--------
+
+1. Rigidbody 컴포넌트
+    - 중력, 관성, 저항등의 물리효과 부여 하는 컴포넌트
+    - edit - project settings - physics 에서 설정 변환 가능
+    - Inspector 창에서의 조절
+        - Mass : 질량
+        - Drag : 저항 (공기저항 느낌?)
+        - Angular Drag : 회전값에 대한 저항
+        - Use Gravity : 중력 적용 여부
+        - Is kinemetic : 물리효과 on/off
+        - Interpolate : 움직임 이상할때 보완 기능? 
+        - collision Detection : 더 연속적이거나 더 세부적인 물리효과 적용가능
+        - Constraints : 제약 사항(위치, 각도 고정)
+
+    - method
+        - MovePosition : 특정 위치로 옮김 
+            - 연속적인 움직임으로 만드는게 아니라 플레이 중에쓰기보단 초기화 할때 쓰는게 좋을듯 하다. (태초마을?느낌으루다가)
+        - AddForce : 특정 방향으로 힘을 가함 
+            - 힘을 가하는 방향을 입력값으로 넣음
+            - 질량 관성등의 물리값의 영향을 받음
+        - AddTorque : 특정 방향으로 토크를 가함
+            - 입력값은 회전 축
+            - 질량 관성등의 물리값의 영향을 받음
+        - AddExplosionForce : 폭발하는 힘을 가함
+            - 폭발력, 폭발방향, 폭발 반경을 입력으로 넣어야함
+            - 반경 안에선 같은 힘을 받는듯함
+        - Move는 컴포넌트의 이동상태를 직접 변화시키고 Add는 물리효과를 작용시킨다.
