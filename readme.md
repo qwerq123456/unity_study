@@ -115,3 +115,46 @@ part 3 - 리지드 바디(Rigidbody)
             - 폭발력, 폭발방향, 폭발 반경을 입력으로 넣어야함
             - 반경 안에선 같은 힘을 받는듯함
         - Move는 컴포넌트의 이동상태를 직접 변화시키고 Add는 물리효과를 작용시킨다.
+
+part 4 - 컬라이더 (collider)
+---------
+1. 컬라이더
+    - 물리적 충돌을 관리하는 컴포넌트
+    - edit collider 
+        - 충돌 범위를 설정
+            - shift 누르고 하면 전체적으로 커짐
+            - alt누르고 움직이면 반대방향도 커짐
+        - 게임에서 피격범위? 같은것들이 보이는것과 조금 다른게 이런거 아닐까?
+
+    - center
+        - collider 의 중심을 바꿈
+            - 무게중심이라 하면 되나?
+    
+    - material
+        - Physics Material
+            - 물리적 성질 부여
+                - 탄성, 마찰등 부여
+    
+    - isTrigger
+        - 충돌 감지
+            - 충돌을 감지만 하고 물리적 효과는 무시한다
+            - 진짜 트리거에 쓰는듯ㅋㅋ;
+    
+    - Method
+        - Raycast : 레이저를 쏴서 collider와 만나는가?
+
+    - OnTrigger
+        - Start 나 Update처럼 MonoBehaviour안에 넣어서 사용
+        - OnTriggerEnter() : 다른 collider 가 들어올때 실행
+        - OnTriggerExit() : 다른 collider가 나갈때 실행
+        - OnTriggerStay() : 다른 collider가 겹칠때
+    - OnCollision
+        - OnCollisionEnter() : 다른 collider와 충돌할때 실행
+        - OnCollisionExit() : 다른 collider와 충돌 후에 실행
+        - OnCollisionStay() : 서로 위치가 겹쳐졌을때 어떻게 될지 사용
+            - 억지로 물체의 위치를 옮기다 겹쳐질 수 있음. 이때 문제가 생기지 않게 할때 사용
+    - 따로 배운것
+        - GetKeyDown : 누르고 있어도 한번으로 인식 GetKey는 누르고있으면 연속적으로 인식되는거와 다름
+        - GetMouseButton : 마우스 버튼 입력 받음
+            - 0: 좌, 1: 우
+            - Down붙이면 누르고 있어도 한번만 인식
