@@ -158,3 +158,31 @@ part 4 - 컬라이더 (collider)
         - GetMouseButton : 마우스 버튼 입력 받음
             - 0: 좌, 1: 우
             - Down붙이면 누르고 있어도 한번만 인식
+
+part 5 - 메쉬 렌더러
+------
+1. Mesh : 점과 선, 면의 집합체
+    - 그래픽 이라고 생각하면 편할듯
+
+2. Mesh Renderer
+    - Materials
+        - material만들고, 마우스로 드래그 해서 적용 가능
+        - Albedo : 색 변경
+        - Size : 적용하는 material 수
+    
+    - Lighting
+        - Cast Shadows : 그림자 관련 설정
+            - shadows only : 그림자만 나옴
+                - 1인칭 게임 같은거 보면 내 캐릭 안보이고 장비만 보이는 것 같은 효과
+                - 스타에서 클로킹이 딱 이기능일듯
+        - Receive Shadows : 다른 물체의 그림자에 영향을 받음
+
+    - Probe
+        - 빛 관련 처리 다 할 수 있음. 주변 빛에 영향을 받게 세팅하는 부분이 있는데 잘 이해 안댐...ㅠ
+        - Light Probes : 주변광 처리
+        - Reflection Probes : 반사광 처리
+        - Anchor Override : 다른 객체와 같은 효과를 받을 수 있게 해주는 기능
+
+    - Additional Settings
+        - Dynamic Occluded : 카메라가 볼때만 표시하기. 점점 물체가 많아지면 안보고 있는것을 처리하는게 비효율 적이기 때문에 쓰는 기능
+

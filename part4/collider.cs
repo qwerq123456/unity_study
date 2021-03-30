@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderTest : MonoBehaviour
+public class collider : MonoBehaviour
 {
     private BoxCollider col;
 
